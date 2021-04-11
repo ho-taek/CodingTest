@@ -1,2 +1,2 @@
 # data-structure
-" 문제들"
+" 백준 문제들"
