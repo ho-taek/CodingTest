@@ -1,38 +1,29 @@
-from collections import Counter
-import operator as op
-from functools import reduce
+n,m = map(int, input().split())
 
-n = int(input())
-x = [input() for _ in range(n)]
+graph = []
+for i in range(n):
+    graph.append(list(map(int, input())))
 
+def dfs(x,y):
+    if x <= -1 or x >= n or y <= -1 or y >= m:
+        return False
 
-li = []
-for i in x:
-    cnt = 0
-    for j in i:
-        cnt += 1
-        ans = i.replace(j,str(cnt))
-        i = ans
-        if cnt == len(i):
-            li.append(ans)
+    if graph[x][y] == 0:
+        graph[x][y] = 1
+        dfs(x -1,y)
+        dfs(x,y-1)
+        dfs(x+1, y)
+        dfs(x, y+1)
+        return True
+    return False
 
-counter = dict(Counter(li))
-dictionary = list(counter.values())
+result = 0
+for i in range(n):
+    for j in range(m):
+        if dfs(i,j) == True:
+            print(str(i) + "+" + str(j))
+            result += 1
+            
 
-def nCr(n, r):
-    if n < 1 or r < 0 or n < r:
-        raise ValueError
-    r = min(r, n-r)
-    numerator = reduce(op.mul, range(n, n-r, -1), 1)
-    denominator = reduce(op.mul, range(1, r+1), 1)
-    return numerator // denominator
-
-answer = 0
-for i in dictionary:
-    if i == 2:
-        answer += 1
-    elif i> 1:
-        answer += nCr(i, 2)
-
-print(answer)
+print(result)
 
