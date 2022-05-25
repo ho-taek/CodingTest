@@ -6,7 +6,7 @@ graph = []
 
 for i in range(n):
     graph.append(list(map(int, input())))
-
+print(graph)
 nx = [-1, 1, 0, 0]
 ny = [0,0,-1,1]
 
