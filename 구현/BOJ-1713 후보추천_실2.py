@@ -9,7 +9,7 @@ answer = []
 num_list = [0]*101
 
 for i in sentence:
-    # answer이 3이 아닐때
+    # answer이 n이 아닐때
     if len(answer) != n:
         if i not in answer:
             answer.append(i)
