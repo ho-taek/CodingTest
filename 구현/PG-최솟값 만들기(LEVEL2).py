@@ -10,7 +10,3 @@ def solution(A,B):
 
     return answer
 
-
-tmp = 4
-tmp //= 2
-print(tmp)
