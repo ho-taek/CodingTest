@@ -2,7 +2,6 @@ import sys
 read = sys.stdin.readline
 
 t = int(read())
-m = 0
 cache = [[0,0] for i in range(41)]
 cache[0]=[1,0]
 cache[1]=[0,1]
@@ -18,11 +17,4 @@ for _ in range(t):
     n = int(read())
     answer = fib(n)
     print('{} {}'.format(answer[0],answer[1]))
-
-
-
-
-    
-
-
     
