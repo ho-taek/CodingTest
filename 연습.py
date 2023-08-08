@@ -1,6 +1,6 @@
-from collections import deque
-li = [2,2,2]
+li = [1,1,2,3,1,5,6,7]
+example = [[0]]
+if example[0]:
+    print(1)
 
-queue = deque((1,1))
-print(queue)
-
+print([True]+[False]*3)
