@@ -1,28 +1,7 @@
-s = input()
-numRows = int(input())
+import sys
 
-answer = ""
-index = -1
-index_check = 0
-tmp = False
-for i in s :
-    if tmp == False :
-        index += 1
-    else:
-        index -= 1
+read = sys.stdin.readline
 
-    if index_check == index :
-        answer += i
-            
-    
-    if index == numRows - 1:
-         tmp == True
+answer = list(map(int,read().split(" ")))
 
-    if index == 0:
-         tmp = False
-print(answer)
-
-    
-    
-
-    
+print(answer[0] * answer[1])
